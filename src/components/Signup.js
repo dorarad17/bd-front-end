@@ -4,9 +4,11 @@ import { ErrorMessage } from "@hookform/error-message";
 import "bootstrap/dist/css/bootstrap.css";
 
 const styles = {
-  container: {
-    width: "80%",
+  form: {
+    width: "100%",
     margin: "0 auto",
+    marginTop: "200px",
+    padding: "15%",
   },
   input: {
     width: "100%",
@@ -23,9 +25,9 @@ function Signup() {
   }
 
   return (
-    <div className="container">
-      <div style={styles.container}>
-        <h4>My Form</h4>
+    <div className="form">
+      <div style={styles.form}>
+        <h4>Sign up here</h4>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-group">
             <input
