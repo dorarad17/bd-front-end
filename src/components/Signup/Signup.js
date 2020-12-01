@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import isEmail from "validator/lib/isEmail";
+import { ErrorMessage } from "@hookform/error-message";
+import "bootstrap/dist/css/bootstrap.css";
 
 const styles = {
   container: {
@@ -14,7 +15,7 @@ const styles = {
 
 function Signup() {
   const { register, handleSubmit, errors, formState } = useForm({
-    mode: "onBlur",
+    mode: "onSubmit",
   });
 
   function onSubmit(data) {
@@ -22,40 +23,72 @@ function Signup() {
   }
 
   return (
-    <div style={styles.container}>
-      <h4>My Form</h4>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          name="firstname"
-          ref={register({
-            required: true,
-            pattern: /^[A-Za-z]+$/i,
-          })}
-          style={{ ...styles.input, borderColor: errors.firstname && "red" }}
-          placeholder="First Name"
-        />
-        <input
-          name="lastname"
-          ref={register({
-            required: true,
-            pattern: /^[A-Za-z]+$/i,
-          })}
-          style={{ ...styles.input, borderColor: errors.lastname && "red" }}
-          placeholder="Last Name"
-        />
-        <input
-          name="email"
-          ref={register({
-            required: true,
-            validate: (input) => isEmail(input), // returns true if valid
-          })}
-          style={{ ...styles.input, borderColor: errors.email && "red" }}
-          placeholder="Email"
-        />
-        <button type="submit" disabled={formState.isSubmitting}>
-          Submit
-        </button>
-      </form>
+    <div className="container">
+      <div style={styles.container}>
+        <h4>My Form</h4>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="form-group">
+            <input
+              name="firstName"
+              placeholder="First name"
+              className={`form-control ${errors.firstName ? "is-invalid" : ""}`}
+              ref={register({
+                required: "First name is required",
+              })}
+            />
+            <ErrorMessage
+              className="invalid-feedback"
+              name="firstName"
+              as="div"
+              errors={errors}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              name="lastName"
+              placeholder="Last name"
+              className={`form-control ${errors.lastName ? "is-invalid" : ""}`}
+              ref={register({
+                required: "Last name is required",
+              })}
+            />
+            <ErrorMessage
+              className="invalid-feedback"
+              name="lastName"
+              as="div"
+              errors={errors}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              name="email"
+              placeholder="Email"
+              className={`form-control ${errors.email ? "is-invalid" : ""}`}
+              ref={register({
+                required: "Email is required",
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                  message: "Invalid email address format",
+                },
+              })}
+            />
+            <ErrorMessage
+              className="invalid-feedback"
+              name="email"
+              as="div"
+              errors={errors}
+            />
+          </div>
+
+          <button
+            className="btn btn-primary btn-block"
+            type="submit"
+            disabled={formState.isSubmitting}
+          >
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
