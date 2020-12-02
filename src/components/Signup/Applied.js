@@ -3,8 +3,8 @@ import { Tick } from "react-crude-animated-tick";
 
 function Applied() {
   return (
-    <div className="container-fluid">
-      <Tick size={200} />
+    <div className="container-fluid mx-auto">
+      <Tick size={100} />
     </div>
   );
 }
