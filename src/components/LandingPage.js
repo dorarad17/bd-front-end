@@ -5,7 +5,7 @@ import Logo from "./images/bd.png";
 function LandingPage() {
   return (
     <div className="container-fluid">
-      <div className="row align-items-center">
+      <div className="row">
         <div className="col-lg-7">
           <img
             src={Logo}
