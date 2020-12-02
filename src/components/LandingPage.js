@@ -1,5 +1,5 @@
 import React from "react";
-import Signup from "./Signup/Signup";
+import Signup from "./signup/Signup";
 import Logo from "./images/bd.png";
 
 function LandingPage() {
