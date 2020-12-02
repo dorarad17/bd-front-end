@@ -14,9 +14,7 @@ function App() {
     <HashRouter basename="/">
       <div className="container">
         <Switch>
-          <div className="col-lg-12">
-            <Route path="/" exact component={LandingPage} />
-          </div>
+          <Route path="/" exact component={LandingPage} />
         </Switch>
       </div>
     </HashRouter>

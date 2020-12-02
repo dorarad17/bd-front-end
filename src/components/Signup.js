@@ -13,8 +13,7 @@ function Signup() {
   }
 
   return (
-    <div className="form">
-      <h4>Sign up here</h4>
+    <div className="form mx-auto">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group">
           <input
@@ -74,7 +73,7 @@ function Signup() {
           type="submit"
           disabled={formState.isSubmitting}
         >
-          Submit
+          APPLY
         </button>
       </form>
     </div>
