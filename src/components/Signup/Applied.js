@@ -1,10 +1,15 @@
 import React from "react";
-import { Tick } from "react-crude-animated-tick";
+import Smiley from "../images/smiley.gif";
 
 function Applied() {
   return (
     <div className="container-fluid mx-auto">
-      <Tick size={100} />
+      <img
+        src={Smiley}
+        alt="smiley"
+        id="smiley"
+        className="img-fluid rounded mx-auto d-block"
+      />
     </div>
   );
 }
