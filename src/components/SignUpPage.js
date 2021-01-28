@@ -1,8 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Signup from "./Signup/Signup";
 import Logo from "./images/bd.png";
 
-function LandingPage() {
+function SignUpPage() {
   return (
     <div className="container-fluid">
       <div className="row justify-content-center">
@@ -13,10 +13,13 @@ function LandingPage() {
             id="BD"
             className="img-fluid rounded mx-auto d-block"
           />
+          <div>
+            <Signup />
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export default LandingPage;
+export default SignUpPage;

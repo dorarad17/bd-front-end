@@ -1,23 +1,17 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./App.css";
 import LandingPage from "./components/LandingPage";
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  HashRouter,
-} from "react-router-dom";
+import Nav from "./components/Nav";
 
 function App() {
   return (
-    <HashRouter basename="/">
+    <Router>
       <div className="container">
-        <Switch>
-          <Route path="/" exact component={LandingPage} />
-        </Switch>
+        <Nav />
+        <LandingPage />
       </div>
-    </HashRouter>
+    </Router>
   );
 }
 
