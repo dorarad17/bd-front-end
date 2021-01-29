@@ -1,26 +1,34 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import SignUpPage from "./components/SignUpPage";
+import { Link } from "react-router-dom";
 
 function Nav() {
   return (
     <div className="container">
       <nav className="navbar fixed-top justify-content-between">
         <a className="navbar-brand" href="">
-          <h1>BD</h1>
+          <Link to="/">
+            <h1>BD</h1>
+          </Link>
         </a>
-        <Router>
-          <span className="links justify-content-end">
-            <Link to="/sign-up" className="links">
-              Signup
-            </Link>{" "}
-            |{" "}
-            <Link to="/about" className="links">
-              About
-            </Link>
-          </span>
-          <Route path="/sing-up" exact component={SignUpPage} />
-        </Router>
+
+        <span className="links justify-content-end">
+          <Link to="/sign-up">Sign-up</Link> |{" "}
+          <Link to="/food" className="links">
+            Food
+          </Link>{" "}
+          |{" "}
+          <Link to="/drinks" className="links">
+            Drinks
+          </Link>{" "}
+          |{" "}
+          <Link to="/rooms" className="links">
+            Rooms
+          </Link>{" "}
+          |{" "}
+          <Link to="/admin" className="links">
+            Admin
+          </Link>
+        </span>
       </nav>
     </div>
   );

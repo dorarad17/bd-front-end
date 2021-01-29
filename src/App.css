@@ -23,10 +23,14 @@
 #BD {
   width: 60%;
   height: auto;
-  margin-top: 60px;
+  margin-top: 20px;
 }
 
 #smiley {
   width: 30%;
   height: auto;
+}
+
+body {
+  padding-top: 100px;
 }

@@ -1,6 +1,6 @@
 import React from "react";
-import Signup from "./Signup/Signup";
-import Logo from "./images/bd.png";
+import Signup from "./Signup";
+import Logo from "../images/bd.png";
 
 function SignUpPage() {
   return (
