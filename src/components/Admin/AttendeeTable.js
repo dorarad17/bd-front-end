@@ -2,28 +2,28 @@ import { React, useState, useEffect } from "react";
 import axios from "axios";
 
 function AttendeeTable() {
-  const [attendees, setAttendeeList] = useState([]);
+  const [isLoading, setIsloading] = useState(true);
+  const [attendees, setAttendeeList] = useState(["None"]);
 
-  var getAttendees = () => {
+  useEffect(() => {
     axios
       .get("http://localhost:8081/attendees")
       .then((response) => {
         // handle success
-        // push new task to array
-        const allAttendees = response.data;
-        console.log(allAttendees);
-        setAttendeeList(allAttendees);
+        //console.log(response.data);
+        console.log(response);
+        setAttendeeList("test");
         console.log(attendees);
+        setIsloading(false);
+        console.log(isLoading);
       })
       .catch(function (error) {
         // handle error
         console.error(error);
       });
-  };
+  });
 
-  getAttendees();
-
-  return <p>People coming: </p>;
+  return <p>People coming:</p>;
 }
 
 export default AttendeeTable;
