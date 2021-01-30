@@ -3,7 +3,7 @@ import axios from "axios";
 
 function AttendeeTable() {
   const [isLoading, setIsLoading] = useState(true);
-  const [attendees, setAttendeeList] = useState({});
+  const [attendees, setAttendeeList] = useState([]);
 
   useEffect(() => {
     fetchData();
