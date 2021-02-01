@@ -7,14 +7,13 @@ import axios from "axios";
 
 function Signup() {
   const [show, setShow] = useState(false);
-  const [attendees, setAttendeeList] = useState([]);
 
   function addAttendee(firstName, lastName, email) {
     const attendeeToAdd = {
       id: "",
       firstName: firstName,
       lastName: lastName,
-      attending: false,
+      attending: true,
       email: email,
     };
 
@@ -23,9 +22,7 @@ function Signup() {
       .then((response) => {
         // handle success
         // push new task to array
-        const currentAttendees = attendees;
-        currentAttendees.push(attendeeToAdd);
-        setAttendeeList(currentAttendees);
+        console.log(response);
       })
       .catch(function (error) {
         // handle error
@@ -39,7 +36,6 @@ function Signup() {
 
   function onSubmit(data) {
     addAttendee(data.firstName, data.lastName, data.email);
-    console.log(data); // { username: 'test', email: 'test', password: 'test' }
     setShow(!show);
   }
 
