@@ -6,6 +6,10 @@
   margin: 20px 0;
 }
 
+body {
+  padding-top: 100px;
+}
+
 .form {
   width: 40%;
   margin-top: 1px;
@@ -33,10 +37,6 @@
   height: auto;
 }
 
-body {
-  padding-top: 100px;
-}
-
-.card.w-25.attendeeList {
+.attendeeList {
   margin: 1%;
 }

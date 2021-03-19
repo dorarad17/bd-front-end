@@ -1,19 +1,22 @@
 import { React } from "react";
+import Button from "react-bootstrap/Button";
 
 function NotAttendingTable({ attendees }) {
-  console.log({ attendees });
   return (
     <div className="row">
-      <div className="card w-25 attendeeList">
+      <div className="card w-75 attendeeList align-center">
         <div className="card-body">
-          <p>Not coming </p>
-          <ul>
-            {attendees.map((item) => (
-              <li key={item.firstName}>
-                {item.firstName} {item.lastName}
-              </li>
-            ))}
-          </ul>
+          <p>Cancelled </p>
+          {attendees.map((item) => (
+            <p>
+              {item.attending === false && (
+                <p key={item.firstName}>
+                  {item.firstName} {item.lastName}{" "}
+                  <Button className="float-right" variant="success"></Button>{" "}
+                </p>
+              )}
+            </p>
+          ))}
         </div>
       </div>
     </div>

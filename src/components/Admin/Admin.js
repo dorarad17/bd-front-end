@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import axios from "axios";
 import AttendingTable from "./AttendingTable";
-import NotAttendingTable from "./AttendingTable";
+import NotAttendingTable from "./NotAttendingTable";
 
 function Admin() {
   const [attendees, setAttendeeList] = useState([]);
@@ -23,11 +23,25 @@ function Admin() {
         console.error(error);
       });
   };
+
+  // const updateData = (id) => {
+  //   var updatedAttendees = [...attendees];
+  //   for (let i = 0; i < updatedAttendees.length; i++) {
+  //     const attendee = updatedAttendees[i];
+
+  //     if (attendee.id === id) {
+  //       attendee.completed = completed;
+  //     }
+  //   }
+  // };
+
   return (
     <div className="container-fluid">
       <div className="row justify-content-center">
-        <div className="col align-center">
+        <div className="col-md-4 align-center" id="attendingCards">
           <AttendingTable attendees={attendees} />
+        </div>
+        <div className="col-md-4 align-center" id="attendingCards">
           <NotAttendingTable attendees={attendees} />
         </div>
       </div>
