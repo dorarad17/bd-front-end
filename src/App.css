@@ -6,24 +6,30 @@
   margin: 20px 0;
 }
 
-.form {
-  width: 70%;
-  margin-top: 10px;
-  padding: 5%;
+body {
+  padding-top: 100px;
 }
 
-/* @media (min-width: 800px) {
+.form {
+  width: 40%;
+  margin-top: 1px;
+}
+
+@media (max-width: 767px) {
   .form {
-    width: 70%;
-    margin-top: 10px;
-    padding: 5%;
+    width: 100%;
   }
-} */
+}
 
 #BD {
-  width: 60%;
+  width: 50%;
   height: auto;
-  margin-top: 20px;
+}
+
+@media (max-width: 767px) {
+  #BD {
+    width: 400px;
+  }
 }
 
 #smiley {
@@ -31,6 +37,6 @@
   height: auto;
 }
 
-body {
-  padding-top: 100px;
+.attendeeList {
+  margin: 1%;
 }

@@ -9,12 +9,10 @@ import Admin from "./components/Admin/Admin";
 function App() {
   return (
     <Router>
-      <div>
-        <Nav />
-        <Route exact path="/" component={LandingPage} />
-        <Route path="/sign-up" component={SignUpPage} />
-        <Route path="/admin" component={Admin} />
-      </div>
+      <Nav />
+      <Route exact path="/" component={LandingPage} />
+      <Route path="/sign-up" component={SignUpPage} />
+      <Route path="/admin" component={Admin} />
     </Router>
   );
 }
