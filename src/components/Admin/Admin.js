@@ -36,16 +36,16 @@ function Admin() {
   // };
 
   return (
-    <div className="container-fluid">
-      <div className="row justify-content-center">
-        <div className="col-md-4 align-center" id="attendingCards">
-          <AttendingTable attendees={attendees} />
-        </div>
-        <div className="col-md-4 align-center" id="attendingCards">
-          <NotAttendingTable attendees={attendees} />
-        </div>
-      </div>
+    // <div className="container-fluid">
+    //   <div className="row justify-content-center">
+    <div>
+      <AttendingTable attendees={attendees} />
     </div>
+    //     {/* <div className="col-md-4 align-center" id="attendingCards">
+    //       <NotAttendingTable attendees={attendees} />
+    //     </div>
+    //   </div>
+    // </div> */}
   );
 }
 
