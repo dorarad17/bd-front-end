@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "./images/partyflag-01.png";
+import Logo from "./images/bd.gif";
 
 function LandingPage() {
   return (
